@@ -14,3 +14,17 @@ def create_deck(): #the function creates a full deck of cards (52)
     random.shuffle(deck) # this introduces randomness into the deck of cards
     return deck
 
+def show_card(card):
+    suit, rank = card
+    space = " " if len(rank) == 2 else " "
+    print (f"""
+        +-------+
+        |{rank}     {space}|
+        |       |
+        |   {suit}   |
+        |       |
+        |{space}     {rank}|
+        +-------+
+        """ )   
+
+def main ():
