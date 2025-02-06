@@ -43,3 +43,6 @@ def main (): # the is the main function where the primary logic is executed and 
             print("The input is invalid. Please enter a number.")
     
     print("\nWe are out of cards. Thank you for playing!")
+
+if __name__ == "__main__": #this is the entry point check to ensure main() function is initialized only when script is run directly here and not when imported as a module in another script 
+    main() #the entry point that starts the program
