@@ -14,7 +14,7 @@ def create_deck(): #the function creates a full deck of cards (52)
     random.shuffle(deck) # this introduces randomness into the deck of cards
     return deck
 
-def show_card(card):
+def show_card(card):   #this function shows the cards in the console 
     suit, rank = card
     space = " " if len(rank) == 2 else " "
     print (f"""
@@ -27,4 +27,19 @@ def show_card(card):
         +-------+
         """ )   
 
-def main ():
+def main (): # the is the main function where the primary logic is executed and is the entry point of the program
+    deck = create_deck()
+    while len(deck) > 0:
+        try:
+            num_cards = int(input(f"\nHow many cards do you want to draw?
+            (Cards left: {len(deck)}): "))
+            if num_cards <= 0:
+                print("Please enter a positive number.")
+                continue
+            hand, deck = draw_card(deck, num_cards)
+            for card in hand:
+                show_card(card)
+        except ValueError:
+            print("The input is invalid. Please enter a number.")
+    
+    print("\nWe are out of cards. Thank you for playing!")
