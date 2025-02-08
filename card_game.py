@@ -31,8 +31,7 @@ def main (): # the is the main function where the primary logic is executed and 
     deck = create_deck()
     while len(deck) > 0:
         try:
-            num_cards = int(input(f"\nHow many cards do you want to draw?
-            (Cards left: {len(deck)}): "))
+            num_cards = int(input(f"\nHow many cards do you want to draw? (Cards left: {len(deck)}): "))
             if num_cards <= 0:
                 print("Please enter a positive number.")
                 continue
