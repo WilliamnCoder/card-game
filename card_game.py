@@ -16,14 +16,14 @@ def create_deck(): #the function creates a full deck of cards (52)
 
 def show_card(card):   #this function shows the cards in the console 
     suit, rank = card
-    space = " " if len(rank) == 2 else " "
+    rank_space = " " if len(rank) == 1 else " " #this makes no extra space for 2-characters ranks (e.g cards with 10 and above)
     print (f"""
         +-------+
-        |{rank}     {space}|
+        |{rank:<2}     |
         |       |
         |   {suit}   |
         |       |
-        |{space}     {rank}|
+        |     {rank:>2}|
         +-------+
         """ )   
 
